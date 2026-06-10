@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -11,6 +12,7 @@ public class MainManager : MonoBehaviour
     public Rigidbody Ball;
 
     public Text ScoreText;
+    public Text BestScoreNamee;
     public GameObject GameOverText;
     
     private bool m_Started = false;
@@ -18,7 +20,15 @@ public class MainManager : MonoBehaviour
     
     private bool m_GameOver = false;
 
+    public static MainManager Instance;
+
     
+    void Awake()
+    {
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
