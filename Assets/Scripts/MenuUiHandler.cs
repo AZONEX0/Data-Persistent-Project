@@ -29,6 +29,7 @@ public class MenuUiHandler : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene(1);
+        //MainManager.Instance.gameStart();
         usernameSubmit();
     }
 
