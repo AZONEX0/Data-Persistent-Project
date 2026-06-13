@@ -16,7 +16,7 @@ public class MenuUiHandler : MonoBehaviour
         
     }
 
-   public void usernameSubmit()
+    public void usernameSubmit()
     {
         string username = USERNAME.text;
     }
