@@ -16,6 +16,8 @@ public class Ball : MonoBehaviour
     
     private void OnCollisionExit(Collision other)
     {
+        MainManager.Instance.gameStart();
+
         var velocity = m_Rigidbody.linearVelocity;
         
         //after a collision we accelerate a bit
