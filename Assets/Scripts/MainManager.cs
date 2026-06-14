@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using TMPro;
 using TreeEditor;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -14,7 +15,7 @@ public class MainManager : MonoBehaviour
     public Rigidbody Ball;
 
     public Text ScoreText;
-    public Text BestScoreNamee;
+    public TextMeshPro BestScoreNamee;
     public GameObject GameOverText;
 
     private bool m_Started = false;
@@ -39,12 +40,20 @@ public class MainManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
+
+        
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        GameOverText = GameObject.FindWithTag("GameoverText");
+        //BestScoreNamee = string(MenuUiHandler.instance.USERNAME.GetComponent<Text>());
+
+        //string username = MenuUiHandler.instance.USERNAME.text;
+        BestScoreNamee.text = MenuUiHandler.instance.usernameSubmit();
+        //Debug.Log(username);
+
+        //GameOverText = GameObject.FindWithTag("GameoverText");
 
         const float step = 0.6f;
         int perLine = Mathf.FloorToInt(4.0f / step);
