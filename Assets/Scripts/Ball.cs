@@ -10,13 +10,13 @@ public class Ball : MonoBehaviour
     void Start()
     {
         m_Rigidbody = GetComponent<Rigidbody>();
-        MainManager.Instance.Ball = this.GetComponent<Rigidbody>();
+        //MainManager.Instance.Ball = this.GetComponent<Rigidbody>();
 
     }
     
     private void OnCollisionExit(Collision other)
     {
-        MainManager.Instance.gameStart();
+        //MainManager.Instance.gameStart();
 
         var velocity = m_Rigidbody.linearVelocity;
         
