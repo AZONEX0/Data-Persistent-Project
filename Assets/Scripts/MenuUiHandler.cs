@@ -8,20 +8,18 @@ public class MenuUiHandler : MonoBehaviour
 {
     public static MenuUiHandler instance;
 
-    public TMP_InputField USERNAME;
+    //public TextMeshProUGUI USERNAME;
+    
     //public TextMeshProUGUI BestScoreNme;
-   
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         
     }
 
-    public void usernameSubmit()
-    {
-        string username = USERNAME.text;
-        //MainManager.Instance.BestScoreNamee.text = username;
-    }
+    
 
     public void returnToMenuExit()
     {
@@ -30,9 +28,10 @@ public class MenuUiHandler : MonoBehaviour
 
     public void StartGame()
     {
+        ReferenceForMain.inostance.UsernameSubmit();
         SceneManager.LoadScene(1);
         //MainManager.Instance.gameStart();
-        //usernameSubmit();
+        //UsernameSubmit();
     }
 
     public void Exit()

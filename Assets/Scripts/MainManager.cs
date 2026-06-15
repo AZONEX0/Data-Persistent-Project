@@ -15,7 +15,7 @@ public class MainManager : MonoBehaviour
     public Rigidbody Ball;
 
     public Text ScoreText;
-    public TextMeshPro BestScoreNamee;
+    public Text BestScoreNamee;
     public GameObject GameOverText;
 
     private bool m_Started = false;
@@ -50,8 +50,8 @@ public class MainManager : MonoBehaviour
         //BestScoreNamee = string(MenuUiHandler.instance.USERNAME.GetComponent<Text>());
 
         //string username = MenuUiHandler.instance.USERNAME.text;
-        BestScoreNamee.text = MenuUiHandler.instance.usernameSubmit();
-        //Debug.Log(username);
+        BestScoreNamee.text = $"Best Score:  , {ReferenceForMain.inostance.usaarname}";
+        Debug.Log(BestScoreNamee.text);
 
         //GameOverText = GameObject.FindWithTag("GameoverText");
 
