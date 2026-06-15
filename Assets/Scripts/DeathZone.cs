@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DeathZone : MonoBehaviour
 {
@@ -11,5 +12,6 @@ public class DeathZone : MonoBehaviour
     {
         Destroy(other.gameObject);
         MainManager.Instance.GameOver();
+        
     }
 }

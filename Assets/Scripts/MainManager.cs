@@ -116,7 +116,11 @@ public class MainManager : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                //if (m_GameOver = true)
+                //{
+                    SceneManager.LoadScene(0);
+                    m_GameOver = false;
+                //}
             }
         }
     }
