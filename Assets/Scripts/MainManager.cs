@@ -25,6 +25,8 @@ public class MainManager : MonoBehaviour
 
     public static MainManager Instance;
 
+    public int TextScore;
+
 
     void Awake()
     {
@@ -47,10 +49,15 @@ public class MainManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //BestScoreNamee = string(MenuUiHandler.instance.USERNAME.GetComponent<Text>());
+        if (int.TryParse(ScoreText.text, out int scoree))
+            TextScore = scoree;
+        if (int.TryParse(ReferenceForMain.inostance.highScore, out int highscoreee))
+            ReferenceForMain.inostance.liveScore = highscoreee;
 
-        //string username = MenuUiHandler.instance.USERNAME.text;
-        BestScoreNamee.text = $"Best Score:  , {ReferenceForMain.inostance.usaarname}";
+                //BestScoreNamee = string(MenuUiHandler.instance.USERNAME.GetComponent<Text>());
+
+                //string username = MenuUiHandler.instance.USERNAME.text;
+                BestScoreNamee.text = "Best Score: " + $" {ReferenceForMain.inostance.highScore}" + $" {ReferenceForMain.inostance.usaarname}";
         Debug.Log(BestScoreNamee.text);
 
         //GameOverText = GameObject.FindWithTag("GameoverText");
@@ -112,6 +119,11 @@ public class MainManager : MonoBehaviour
                 Ball.AddForce(forceDir * 2.0f, ForceMode.VelocityChange);
             }
         }
+        if (m_Points > ReferenceForMain.inostance.liveScore)
+        {
+            ReferenceForMain.inostance.liveScore = m_Points;
+        }
+
         else if (m_GameOver)
         {
             if (Input.GetKeyDown(KeyCode.Space))
@@ -129,6 +141,8 @@ public class MainManager : MonoBehaviour
     {
         m_Points += point;
         ScoreText.text = $"Score : {m_Points}";
+
+        
     }
 
     public void GameOver()
