@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 173534248}
   m_Layer: 0
   m_Name: ReferenceForMainM
-  m_TagString: Untagged
+  m_TagString: Nameinput
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -150,6 +150,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ReferenceForMain
   usaarname: 
   USERNAME: {fileID: 1176816935}
+  highScore: 
+  liveScore: 0
 --- !u!4 &173534249
 Transform:
   m_ObjectHideFlags: 0
@@ -887,8 +889,8 @@ GameObject:
   - component: {fileID: 1176816936}
   - component: {fileID: 1176816935}
   m_Layer: 5
-  m_Name: InputField (TMP)
-  m_TagString: Untagged
+  m_Name: InputField
+  m_TagString: Nameinput
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

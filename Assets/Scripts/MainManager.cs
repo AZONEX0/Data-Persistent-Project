@@ -130,7 +130,7 @@ public class MainManager : MonoBehaviour
             {
                 //if (m_GameOver = true)
                 //{
-                    SceneManager.LoadScene(0);
+                    SceneManager.LoadScene(1);
                     m_GameOver = false;
                 //}
             }

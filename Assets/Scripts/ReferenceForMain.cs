@@ -18,6 +18,10 @@ public class ReferenceForMain : MonoBehaviour
     {
         if (inostance != null)
         {
+            //USERNAME = ReferenceForMain.inostance.USERNAME;
+            //USERNAME = TMP_InputField.FindAnyObjectByType<TMP_InputField>();
+
+            inostance.usaarname = this.usaarname;
             Destroy(gameObject);
             return;
             //}
@@ -25,6 +29,10 @@ public class ReferenceForMain : MonoBehaviour
             //{
             //    Instantiate(gameObject);
         }
+        //else if (inostance = null)
+        //{
+        //    Instantiate(inostance);
+        //}
 
         inostance = this;
         DontDestroyOnLoad(gameObject);
@@ -34,7 +42,8 @@ public class ReferenceForMain : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        GameObject USERNAME = GameObject.FindWithTag("Nameinput");
+        //GameObject USERNAME = GameObject.FindWithTag("Nameinput");
+        USERNAME = TMP_InputField.FindAnyObjectByType<TMP_InputField>();
     }
 
 
