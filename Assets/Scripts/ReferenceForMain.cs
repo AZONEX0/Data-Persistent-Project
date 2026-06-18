@@ -16,12 +16,13 @@ public class ReferenceForMain : MonoBehaviour
 
     private void Awake()
     {
+        //USERNAME = TMP_InputField.FindAnyObjectByType<TMP_InputField>();
         if (inostance != null)
         {
             //USERNAME = ReferenceForMain.inostance.USERNAME;
-            //USERNAME = TMP_InputField.FindAnyObjectByType<TMP_InputField>();
+            //USERNAME = TMP_InputField.FindAnyObjectByType<TMP_InputField>(); does work
 
-            inostance.usaarname = this.usaarname;
+            //inostance.usaarname = this.usaarname; doesnt work
             Destroy(gameObject);
             return;
             //}
@@ -33,7 +34,6 @@ public class ReferenceForMain : MonoBehaviour
         //{
         //    Instantiate(inostance);
         //}
-
         inostance = this;
         DontDestroyOnLoad(gameObject);
         //FindAllReferences();
@@ -43,7 +43,7 @@ public class ReferenceForMain : MonoBehaviour
     void Start()
     {
         //GameObject USERNAME = GameObject.FindWithTag("Nameinput");
-        USERNAME = TMP_InputField.FindAnyObjectByType<TMP_InputField>();
+        //USERNAME = TMP_InputField.FindAnyObjectByType<TMP_InputField>();
     }
 
 
@@ -57,6 +57,8 @@ public class ReferenceForMain : MonoBehaviour
 
     public string UsernameSubmit()
     {
+        USERNAME = TMP_InputField.FindAnyObjectByType<TMP_InputField>();
+        ReferenceForMain.inostance.usaarname = USERNAME.text;
         string username = USERNAME.text;
         usaarname = username;
         Debug.Log(USERNAME);
@@ -67,13 +69,13 @@ public class ReferenceForMain : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        //USERNAME = TMP_InputField.FindAnyObjectByType<TMP_InputField>();
     }
 
-    public void FindAllReferences()
-    {
-        GameObject USERNAME = GameObject.FindWithTag("Nameinput");
+    //public void FindAllReferences()
+    //{
+    //    GameObject USERNAME = GameObject.FindWithTag("Nameinput");
 
-        //ReferenceForMain.inostance.FindAllReferences();
-    }
+    //    //ReferenceForMain.inostance.FindAllReferences();
+    //}
 }

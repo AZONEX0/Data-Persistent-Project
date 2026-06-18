@@ -30,8 +30,6 @@ public class MenuUiHandler : MonoBehaviour
     {
         ReferenceForMain.inostance.UsernameSubmit();
         SceneManager.LoadScene(1);
-        //MainManager.Instance.gameStart();
-        //UsernameSubmit();
     }
 
     public void Exit()
