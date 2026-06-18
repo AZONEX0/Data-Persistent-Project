@@ -34,10 +34,6 @@ public class MainManager : MonoBehaviour
         {
             Destroy(gameObject);
             return;
-            //}
-            //else if (Instance = null)
-            //{
-            //    Instantiate(gameObject);
         }
 
         Instance = this;
@@ -59,8 +55,6 @@ public class MainManager : MonoBehaviour
                 //string username = MenuUiHandler.instance.USERNAME.text;
                 BestScoreNamee.text = "Best Score: " + $" {ReferenceForMain.inostance.highScore}" + $" {ReferenceForMain.inostance.usaarname}";
         Debug.Log(BestScoreNamee.text);
-
-        //GameOverText = GameObject.FindWithTag("GameoverText");
 
         const float step = 0.6f;
         int perLine = Mathf.FloorToInt(4.0f / step);
@@ -126,5 +120,6 @@ public class MainManager : MonoBehaviour
     {
         m_GameOver = true;
         GameOverText.SetActive(true);
+        MainManager.Instance.GameOverText = GameObject.FindWithTag("GameOverTxt");
     }
 }

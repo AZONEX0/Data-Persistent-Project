@@ -72,10 +72,14 @@ public class ReferenceForMain : MonoBehaviour
         //USERNAME = TMP_InputField.FindAnyObjectByType<TMP_InputField>();
     }
 
-    //public void FindAllReferences()
-    //{
-    //    GameObject USERNAME = GameObject.FindWithTag("Nameinput");
+    public void FindAllReferences()
+    {
+        GameObject Scoretexti = GameObject.Find("ScoreText");
+        MainManager.Instance.ScoreText = Scoretexti.GetComponent<Text>();
 
-    //    //ReferenceForMain.inostance.FindAllReferences();
-    //}
+        GameObject BestScori = GameObject.Find("BestScoreName");
+        MainManager.Instance.BestScoreNamee = Scoretexti.GetComponent<Text>();
+
+        //GameObject GameOva = GameObject.Find("ScoreText");
+    }
 }
