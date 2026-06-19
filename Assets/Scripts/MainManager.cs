@@ -38,7 +38,6 @@ public class MainManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
-
         
     }
 
@@ -55,12 +54,20 @@ public class MainManager : MonoBehaviour
                 //string username = MenuUiHandler.instance.USERNAME.text;
                 BestScoreNamee.text = "Best Score: " + $" {ReferenceForMain.inostance.highScore}" + $" {ReferenceForMain.inostance.usaarname}";
         Debug.Log(BestScoreNamee.text);
+        //if (SceneManager.sceneCount == 0)
+        //{
+
+    }
+
+    public void bricks()
+    {
+        GameObject Paddlee = GameObject.Find("Paddle");
+        Transform Ball = Paddlee.transform.Find("Ball");
+        //Ball = Boll.;
 
         const float step = 0.6f;
         int perLine = Mathf.FloorToInt(4.0f / step);
 
-        //if (SceneManager.sceneCount == 0)
-        //{
         int[] pointCountArray = new[] { 1, 1, 2, 2, 5, 5 };
         for (int i = 0; i < LineCount; ++i)
         {
@@ -77,11 +84,19 @@ public class MainManager : MonoBehaviour
 
     private void Update()
     {
+        //GameObject canvass = GameObject.Find("Canvas");
+        //Transform Gameover = canvass.transform.Find("GameoverText");
+
+        //GameOverText = Gameover.gameObject;
+        //BestScoreNamee = Gameover.GetComponent<Text>();
+
         if (!m_Started)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 m_Started = true;
+                GameObject Scoretexti = GameObject.Find("ScoreText");
+                ScoreText = Scoretexti.GetComponent<Text>();
                 float randomDirection = Random.Range(-1.0f, 1.0f);
                 Vector3 forceDir = new Vector3(randomDirection, 1, 0);
                 forceDir.Normalize();
@@ -90,10 +105,10 @@ public class MainManager : MonoBehaviour
                 Ball.AddForce(forceDir * 2.0f, ForceMode.VelocityChange);
             }
         }
-        if (m_Points > ReferenceForMain.inostance.liveScore)
-        {
-            ReferenceForMain.inostance.liveScore = m_Points;
-        }
+        //if (m_Points > ReferenceForMain.inostance.liveScore)
+        //{
+        //    ReferenceForMain.inostance.liveScore = m_Points;
+        //}
 
         else if (m_GameOver)
         {
@@ -101,8 +116,8 @@ public class MainManager : MonoBehaviour
             {
                 //if (m_GameOver = true)
                 //{
-                    SceneManager.LoadScene(1);
                     m_GameOver = false;
+                    SceneManager.LoadScene(0);
                 //}
             }
         }
@@ -110,6 +125,8 @@ public class MainManager : MonoBehaviour
 
     public void AddPoint(int point)
     {
+        //GameObject Scoretexti = GameObject.Find("ScoreText");
+        //ScoreText = Scoretexti.GetComponent<Text>();
         m_Points += point;
         ScoreText.text = $"Score : {m_Points}";
 
@@ -118,8 +135,17 @@ public class MainManager : MonoBehaviour
 
     public void GameOver()
     {
+        m_Started = false;
+
+        //Text GameOver = Text.Find("GameoverText");
+        //GameOverText = Text.GetComponent<Text>();
+
         m_GameOver = true;
+        GameObject canvass = GameObject.Find("Canvas");
+        Transform Gameover = canvass.transform.Find("GameoverText");
+
+        GameOverText = Gameover.gameObject;
         GameOverText.SetActive(true);
-        MainManager.Instance.GameOverText = GameObject.FindWithTag("GameOverTxt");
+        //MainManager.Instance.GameOverText = GameObject.FindWithTag("GameOverTxt");
     }
 }

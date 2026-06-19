@@ -10,6 +10,7 @@ public class DeathZone : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
+        //MainManager.Instance.GameOverText = GameObject.FindWithTag("GameOverTxt");
         Destroy(other.gameObject);
         MainManager.Instance.GameOver();
         

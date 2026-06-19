@@ -11,7 +11,7 @@ public class Ball : MonoBehaviour
     {
         m_Rigidbody = GetComponent<Rigidbody>();
         MainManager.Instance.Ball = this.GetComponent<Rigidbody>();
-
+        MainManager.Instance.bricks();
     }
     
     private void OnCollisionExit(Collision other)
