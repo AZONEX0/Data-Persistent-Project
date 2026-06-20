@@ -59,8 +59,9 @@ public class ReferenceForMain : MonoBehaviour
     {
         USERNAME = TMP_InputField.FindAnyObjectByType<TMP_InputField>();
         ReferenceForMain.inostance.usaarname = USERNAME.text;
-        string username = USERNAME.text;
-        usaarname = username;
+        //string username = USERNAME.text;
+        string username = new string(usaarname);
+        //usaarname = username;
         Debug.Log(USERNAME);
         return usaarname;
         //MainManager.Instance.BestScoreNamee.text = username;
@@ -74,11 +75,12 @@ public class ReferenceForMain : MonoBehaviour
 
     public void FindAllReferences()
     {
-        GameObject Scoretexti = GameObject.Find("ScoreText");
-        MainManager.Instance.ScoreText = Scoretexti.GetComponent<Text>();
+        //GameObject Scoretexti = GameObject.Find("ScoreText");
+        //MainManager.Instance.ScoreText = Scoretexti.GetComponent<Text>();
 
         GameObject BestScori = GameObject.Find("BestScoreName");
-        MainManager.Instance.BestScoreNamee = Scoretexti.GetComponent<Text>();
+        MainManager.Instance.BestScoreNamee = BestScori.GetComponent<Text>();
+        MainManager.Instance.BestScoreNamee.text = "Best Score: " + $" {ReferenceForMain.inostance.highScore}" + $" {ReferenceForMain.inostance.usaarname}";
 
         //GameObject GameOva = GameObject.Find("ScoreText");
     }

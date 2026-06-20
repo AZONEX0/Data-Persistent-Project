@@ -5,11 +5,13 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
-    private Rigidbody m_Rigidbody;
+    public Rigidbody m_Rigidbody;
 
     void Start()
     {
-        m_Rigidbody = GetComponent<Rigidbody>();
+        ReferenceForMain.inostance.FindAllReferences();
+        MainManager.Instance.m_Started = false;
+        m_Rigidbody = this.GetComponent<Rigidbody>();
         MainManager.Instance.Ball = this.GetComponent<Rigidbody>();
         MainManager.Instance.bricks();
     }

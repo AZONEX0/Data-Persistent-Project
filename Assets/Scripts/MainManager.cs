@@ -18,7 +18,7 @@ public class MainManager : MonoBehaviour
     public Text BestScoreNamee;
     public GameObject GameOverText;
 
-    private bool m_Started = false;
+    public bool m_Started = false;
     private int m_Points;
 
     private bool m_GameOver = false;
@@ -46,13 +46,13 @@ public class MainManager : MonoBehaviour
     {
         if (int.TryParse(ScoreText.text, out int scoree))
             TextScore = scoree;
-        if (int.TryParse(ReferenceForMain.inostance.highScore, out int highscoreee))
-            ReferenceForMain.inostance.liveScore = highscoreee;
+        //if (int.TryParse(ReferenceForMain.inostance.highScore, out int highscoreee))
+        //    ReferenceForMain.inostance.liveScore = highscoreee;
 
                 //BestScoreNamee = string(MenuUiHandler.instance.USERNAME.GetComponent<Text>());
 
                 //string username = MenuUiHandler.instance.USERNAME.text;
-                BestScoreNamee.text = "Best Score: " + $" {ReferenceForMain.inostance.highScore}" + $" {ReferenceForMain.inostance.usaarname}";
+                //BestScoreNamee.text = "Best Score: " + $" {ReferenceForMain.inostance.highScore}" + $" {ReferenceForMain.inostance.usaarname}";
         Debug.Log(BestScoreNamee.text);
         //if (SceneManager.sceneCount == 0)
         //{
@@ -135,7 +135,7 @@ public class MainManager : MonoBehaviour
 
     public void GameOver()
     {
-        m_Started = false;
+        m_Started = true;
 
         //Text GameOver = Text.Find("GameoverText");
         //GameOverText = Text.GetComponent<Text>();
