@@ -19,7 +19,7 @@ public class MainManager : MonoBehaviour
     public GameObject GameOverText;
 
     public bool m_Started = false;
-    private int m_Points;
+    public int m_Points;
 
     private bool m_GameOver = false;
 
@@ -44,15 +44,7 @@ public class MainManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (int.TryParse(ScoreText.text, out int scoree))
-            TextScore = scoree;
-        //if (int.TryParse(ReferenceForMain.inostance.highScore, out int highscoreee))
-        //    ReferenceForMain.inostance.liveScore = highscoreee;
-
-                //BestScoreNamee = string(MenuUiHandler.instance.USERNAME.GetComponent<Text>());
-
-                //string username = MenuUiHandler.instance.USERNAME.text;
-                //BestScoreNamee.text = "Best Score: " + $" {ReferenceForMain.inostance.highScore}" + $" {ReferenceForMain.inostance.usaarname}";
+        
         Debug.Log(BestScoreNamee.text);
         //if (SceneManager.sceneCount == 0)
         //{
@@ -63,7 +55,6 @@ public class MainManager : MonoBehaviour
     {
         GameObject Paddlee = GameObject.Find("Paddle");
         Transform Ball = Paddlee.transform.Find("Ball");
-        //Ball = Boll.;
 
         const float step = 0.6f;
         int perLine = Mathf.FloorToInt(4.0f / step);
@@ -84,12 +75,6 @@ public class MainManager : MonoBehaviour
 
     private void Update()
     {
-        //GameObject canvass = GameObject.Find("Canvas");
-        //Transform Gameover = canvass.transform.Find("GameoverText");
-
-        //GameOverText = Gameover.gameObject;
-        //BestScoreNamee = Gameover.GetComponent<Text>();
-
         if (!m_Started)
         {
             if (Input.GetKeyDown(KeyCode.Space))
@@ -105,28 +90,19 @@ public class MainManager : MonoBehaviour
                 Ball.AddForce(forceDir * 2.0f, ForceMode.VelocityChange);
             }
         }
-        //if (m_Points > ReferenceForMain.inostance.liveScore)
-        //{
-        //    ReferenceForMain.inostance.liveScore = m_Points;
-        //}
 
         else if (m_GameOver)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                //if (m_GameOver = true)
-                //{
                     m_GameOver = false;
                     SceneManager.LoadScene(0);
-                //}
             }
         }
     }
 
     public void AddPoint(int point)
     {
-        //GameObject Scoretexti = GameObject.Find("ScoreText");
-        //ScoreText = Scoretexti.GetComponent<Text>();
         m_Points += point;
         ScoreText.text = $"Score : {m_Points}";
 
@@ -137,15 +113,11 @@ public class MainManager : MonoBehaviour
     {
         m_Started = true;
 
-        //Text GameOver = Text.Find("GameoverText");
-        //GameOverText = Text.GetComponent<Text>();
-
         m_GameOver = true;
         GameObject canvass = GameObject.Find("Canvas");
         Transform Gameover = canvass.transform.Find("GameoverText");
 
         GameOverText = Gameover.gameObject;
         GameOverText.SetActive(true);
-        //MainManager.Instance.GameOverText = GameObject.FindWithTag("GameOverTxt");
     }
 }

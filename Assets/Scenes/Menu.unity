@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 173534249}
   - component: {fileID: 173534248}
   m_Layer: 0
-  m_Name: ReferenceForMainM
+  m_Name: ReferenceForMain
   m_TagString: Nameinput
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

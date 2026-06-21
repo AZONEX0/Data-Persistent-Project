@@ -8,9 +8,13 @@ public class ReferenceForMain : MonoBehaviour
     public string usaarname;
     public TMP_InputField USERNAME;
 
-    public string highScore;
+    public Text HIGHSCORETXT;
+    public int highScoreNmber;
+    public string HighestScoreString;
+    public string HighScoreString; // to convert int to string and string to text
 
-    public int liveScore;
+    //public int liveScore;
+    public int scorri;
 
     public static ReferenceForMain inostance;
 
@@ -42,8 +46,7 @@ public class ReferenceForMain : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //GameObject USERNAME = GameObject.FindWithTag("Nameinput");
-        //USERNAME = TMP_InputField.FindAnyObjectByType<TMP_InputField>();
+
     }
 
 
@@ -58,7 +61,7 @@ public class ReferenceForMain : MonoBehaviour
     public string UsernameSubmit()
     {
         USERNAME = TMP_InputField.FindAnyObjectByType<TMP_InputField>();
-        ReferenceForMain.inostance.usaarname = USERNAME.text;
+        usaarname = USERNAME.text;
         //string username = USERNAME.text;
         string username = new string(usaarname);
         //usaarname = username;
@@ -70,7 +73,7 @@ public class ReferenceForMain : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //USERNAME = TMP_InputField.FindAnyObjectByType<TMP_InputField>();
+        HighScoreUpdate();
     }
 
     public void FindAllReferences()
@@ -80,8 +83,26 @@ public class ReferenceForMain : MonoBehaviour
 
         GameObject BestScori = GameObject.Find("BestScoreName");
         MainManager.Instance.BestScoreNamee = BestScori.GetComponent<Text>();
-        MainManager.Instance.BestScoreNamee.text = "Best Score: " + $" {ReferenceForMain.inostance.highScore}" + $" {ReferenceForMain.inostance.usaarname}";
+        //MainManager.Instance.BestScoreNamee.text = "Best Score: " + $" {HighestScoreString}" + $" {ReferenceForMain.inostance.usaarname}";
 
         //GameObject GameOva = GameObject.Find("ScoreText");
+    }
+
+    public void HighScoreUpdate()
+    {
+        //HighScoreString = HIGHSCORETXT.text;
+        //int HiSc = int.Parse(HighScoreString);
+
+        scorri = MainManager.Instance.m_Points;
+        highScoreNmber = 0;
+        if(highScoreNmber < scorri)
+        {
+            highScoreNmber = scorri;
+            HighScoreString = highScoreNmber.ToString();
+            HighestScoreString = HighScoreString;
+        }
+        MainManager.Instance.BestScoreNamee.text = "Best Score: " + $" {HighestScoreString}" + $" {ReferenceForMain.inostance.usaarname}";
+        //if (highScore < MainManager.Instance.ScoreText)
+        //MainManager.Instance.BestScoreNamee.text = 
     }
 }
