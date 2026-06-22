@@ -73,7 +73,6 @@ public class ReferenceForMain : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        HighScoreUpdate();
     }
 
     public void FindAllReferences()
@@ -94,14 +93,19 @@ public class ReferenceForMain : MonoBehaviour
         //int HiSc = int.Parse(HighScoreString);
 
         scorri = MainManager.Instance.m_Points;
-        highScoreNmber = 0;
-        if(highScoreNmber < scorri)
+        //int HighScoreCheck = highScoreNmber;
+        //highScoreNmber = 0;
+        MainManager.Instance.BestScoreNamee.text = "Best Score: " + $" {HighestScoreString}" + $" {ReferenceForMain.inostance.usaarname}";
+        if (highScoreNmber < scorri)
         {
             highScoreNmber = scorri;
             HighScoreString = highScoreNmber.ToString();
             HighestScoreString = HighScoreString;
         }
-        MainManager.Instance.BestScoreNamee.text = "Best Score: " + $" {HighestScoreString}" + $" {ReferenceForMain.inostance.usaarname}";
+        else
+        {
+
+        }
         //if (highScore < MainManager.Instance.ScoreText)
         //MainManager.Instance.BestScoreNamee.text = 
     }

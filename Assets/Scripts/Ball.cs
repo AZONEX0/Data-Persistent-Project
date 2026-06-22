@@ -15,7 +15,12 @@ public class Ball : MonoBehaviour
         MainManager.Instance.Ball = this.GetComponent<Rigidbody>();
         MainManager.Instance.bricks();
     }
-    
+
+    private void FixedUpdate()
+    {
+        ReferenceForMain.inostance.HighScoreUpdate();
+    }
+
     private void OnCollisionExit(Collision other)
     {
         //MainManager.Instance.gameStart();

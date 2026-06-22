@@ -113,6 +113,8 @@ public class MainManager : MonoBehaviour
     {
         m_Started = true;
 
+        m_Points = 0;
+
         m_GameOver = true;
         GameObject canvass = GameObject.Find("Canvas");
         Transform Gameover = canvass.transform.Find("GameoverText");
