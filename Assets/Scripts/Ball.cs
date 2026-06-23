@@ -14,6 +14,7 @@ public class Ball : MonoBehaviour
         m_Rigidbody = this.GetComponent<Rigidbody>();
         MainManager.Instance.Ball = this.GetComponent<Rigidbody>();
         MainManager.Instance.bricks();
+        MainManager.Instance.m_Points = 0;
     }
 
     private void FixedUpdate()

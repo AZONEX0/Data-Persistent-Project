@@ -105,8 +105,6 @@ public class MainManager : MonoBehaviour
     {
         m_Points += point;
         ScoreText.text = $"Score : {m_Points}";
-
-        
     }
 
     public void GameOver()

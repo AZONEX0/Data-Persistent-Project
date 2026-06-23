@@ -152,7 +152,7 @@ MonoBehaviour:
   USERNAME: {fileID: 1176816935}
   HIGHSCORETXT: {fileID: 2030948852}
   highScoreNmber: 0
-  HighestScoreString: 
+  HighestScoreString: 15
   HighScoreString: 
   scorri: 0
 --- !u!4 &173534249
