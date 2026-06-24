@@ -16,6 +16,7 @@ public class MainManager : MonoBehaviour
 
     public Text ScoreText;
     public Text BestScoreNamee;
+    //public string BestScoreSave;
     public GameObject GameOverText;
 
     public bool m_Started = false;
@@ -38,13 +39,13 @@ public class MainManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
-        
+
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
         Debug.Log(BestScoreNamee.text);
         //if (SceneManager.sceneCount == 0)
         //{
@@ -95,8 +96,8 @@ public class MainManager : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                    m_GameOver = false;
-                    SceneManager.LoadScene(0);
+                m_GameOver = false;
+                SceneManager.LoadScene(0);
             }
         }
     }
@@ -121,3 +122,31 @@ public class MainManager : MonoBehaviour
         GameOverText.SetActive(true);
     }
 }
+
+//    [System.Serializable]
+//    class SaveData
+//    {
+//        public string BestScoreSave;
+//    }
+
+//    public void SaveHighScoreN()
+//    {
+//        SaveData datas = new SaveData();
+
+//        string Json = JsonUtility.ToJson(datas);
+
+//        File.WriteAllText(Application.persistentDataPath + "/save2.json", Json);
+//    }
+
+//    public void LoadHighScoreN()
+//    {
+//        string path = Application.persistentDataPath + "/save2.json";
+//        if (File.Exists(path))
+//        {
+//            string json = File.ReadAllText(path);
+//            SaveData datas = JsonUtility.FromJson<SaveData>(json);
+
+//            BestScoreSave = datas.BestScoreSave;
+//        }
+//    }
+//}

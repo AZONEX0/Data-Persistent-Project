@@ -15,6 +15,7 @@ public class Ball : MonoBehaviour
         MainManager.Instance.Ball = this.GetComponent<Rigidbody>();
         MainManager.Instance.bricks();
         MainManager.Instance.m_Points = 0;
+        //MainManager.Instance.BestScoreNamee.text = MainManager.Instance.BestScoreSave;
     }
 
     private void FixedUpdate()

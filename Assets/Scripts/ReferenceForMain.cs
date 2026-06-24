@@ -9,7 +9,7 @@ public class ReferenceForMain : MonoBehaviour
     public string usaarname;
     public TMP_InputField USERNAME;
 
-    public Text HIGHSCORETXT;
+    //public Text HIGHSCORETXT;
     public int highScoreNmber;
     public string HighestScoreString;
     public string HighScoreString; // to convert int to string and string to text
@@ -47,6 +47,7 @@ public class ReferenceForMain : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+
         HighestScoreString = "0";
         HighScoreString = "0";
         LoadHighScore();
@@ -73,6 +74,12 @@ public class ReferenceForMain : MonoBehaviour
         return usaarname;
         //MainManager.Instance.BestScoreNamee.text = username;
     }
+
+    //public string usernametest()
+    //{
+    //    string username = new string(usaarname);
+    //    return usaarname;
+    //}
 
     // Update is called once per frame
     void Update()
@@ -101,7 +108,7 @@ public class ReferenceForMain : MonoBehaviour
         //if (highScore < MainManager.Instance.ScoreText)
         //MainManager.Instance.BestScoreNamee.text = 
         scorri = MainManager.Instance.m_Points;
-        MainManager.Instance.BestScoreNamee.text = "Best Score: " + $" {HighestScoreString}" + $" {ReferenceForMain.inostance.usaarname}";
+        MainManager.Instance.BestScoreNamee.text = "Best Score: " + $" {HighestScoreString}" + $" {usaarname}";
         if (highScoreNmber < scorri)
         {
             highScoreNmber = scorri;
@@ -113,7 +120,9 @@ public class ReferenceForMain : MonoBehaviour
             //highScoreNmber = scorri;
             //HighScoreString = highScoreNmber.ToString();
             HighestScoreString = HighScoreString;
+            // MAKE ANOTHER VARIABLE LIKE HIGHEST SCORE STRING HERE TO SAVE THE NAME AS WELL. AYBE THAT WILL WORK
             SaveHighScore();
+            //MainManager.Instance.SaveHighScoreN();
         }
     }
 
