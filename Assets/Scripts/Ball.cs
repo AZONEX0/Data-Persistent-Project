@@ -7,9 +7,12 @@ public class Ball : MonoBehaviour
 {
     public Rigidbody m_Rigidbody;
 
+    // yes yes i should have created a seperate manager for all the references i put below. 
+    // will keep it in mind next time.
+
     void Start()
     {
-        ReferenceForMain.inostance.FindAllReferences();
+        ReferenceForMain.inostance.AssignReferences();
         MainManager.Instance.m_Started = false;
         m_Rigidbody = this.GetComponent<Rigidbody>();
         MainManager.Instance.Ball = this.GetComponent<Rigidbody>();

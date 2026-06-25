@@ -10,18 +10,9 @@ public class MenuUiHandler : MonoBehaviour
 
     public Text HIGHSCORETXT;
     private string txt;
-    //public TextMeshProUGUI USERNAME;
-
-    //public TextMeshProUGUI BestScoreNme;
-
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //MainManager.Instance.LoadHighScoreN();
-        //MainManager.Instance.BestScoreNamee.text = MainManager.Instance.BestScoreSave;
-        //DontDestroyOnLoad(gameObject
-        HIGHSCORETXT.text = $" {ReferenceForMain.inostance.HighestScoreString}" + $" {ReferenceForMain.inostance.usaarname}";
+        HIGHSCORETXT.text = "Best Score: " + $"{ ReferenceForMain.inostance.HighestScoreString}" + $" {ReferenceForMain.inostance.HighestScoreName}";
     }
 
     
@@ -34,7 +25,6 @@ public class MenuUiHandler : MonoBehaviour
     public void StartGame()
     {
         ReferenceForMain.inostance.UsernameSubmit();
-        //ReferenceForMain.inostance.usernametest();
         SceneManager.LoadScene(1);
     }
 
